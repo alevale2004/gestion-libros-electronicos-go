@@ -2,6 +2,7 @@ package libros
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 )
 
@@ -108,4 +109,9 @@ func (l *Libro) Prestar() error {
 
 func (l *Libro) Devolver() {
 	l.disponible = true
+}
+
+func (l Libro) MostrarInfo() string {
+	return fmt.Sprintf("Libro: %s - Autor: %s - Categoría: %s",
+		l.titulo, l.autor, l.categoria)
 }
