@@ -2,6 +2,7 @@ package autores
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 )
 
@@ -60,4 +61,9 @@ func (a *Autor) SetNacionalidad(nacionalidad string) {
 
 func (a *Autor) SetBiografia(biografia string) {
 	a.biografia = biografia
+}
+
+func (a Autor) MostrarInfo() string {
+	return fmt.Sprintf("Autor: %s - Nacionalidad: %s",
+		a.nombre, a.nacionalidad)
 }
