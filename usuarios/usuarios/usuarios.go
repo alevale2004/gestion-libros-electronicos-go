@@ -62,3 +62,31 @@ func (u Usuario) GetIdentificacion() string {
 func (u Usuario) GetTipo() string {
 	return u.tipo
 }
+
+
+func (u *Usuario) SetNombre(nombre string) error {
+	if strings.TrimSpace(nombre) == "" {
+		return errors.New("el nombre no puede estar vacío")
+	}
+
+	u.nombre = nombre
+	return nil
+}
+
+func (u *Usuario) SetCorreo(correo string) error {
+	if strings.TrimSpace(correo) == "" {
+		return errors.New("el correo no puede estar vacío")
+	}
+
+	u.correo = correo
+	return nil
+}
+
+func (u *Usuario) SetTipo(tipo string) error {
+	if strings.TrimSpace(tipo) == "" {
+		return errors.New("el tipo de usuario no puede estar vacío")
+	}
+
+	u.tipo = tipo
+	return nil
+}
