@@ -99,10 +99,11 @@ func (l *Libro) SetCategoria(categoria string) error {
 }
 
 func (l *Libro) Prestar() error {
+	// Se verifica la disponibilidad antes de realizar el préstamo.
 	if !l.disponible {
 		return errors.New("el libro no está disponible")
 	}
-
+    // Si está disponible, se cambia su estado para evitar otro préstamo.
 	l.disponible = false
 	return nil
 }
