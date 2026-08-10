@@ -63,7 +63,6 @@ func (u Usuario) GetTipo() string {
 	return u.tipo
 }
 
-
 func (u *Usuario) SetNombre(nombre string) error {
 	if strings.TrimSpace(nombre) == "" {
 		return errors.New("el nombre no puede estar vacío")
