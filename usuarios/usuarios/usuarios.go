@@ -2,6 +2,7 @@ package usuarios
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 )
 
@@ -88,4 +89,9 @@ func (u *Usuario) SetTipo(tipo string) error {
 
 	u.tipo = tipo
 	return nil
+}
+
+func (u Usuario) MostrarInfo() string {
+	return fmt.Sprintf("Usuario: %s - Correo: %s - Tipo: %s",
+		u.nombre, u.correo, u.tipo)
 }
