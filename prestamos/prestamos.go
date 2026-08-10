@@ -61,10 +61,11 @@ func (p Prestamo) GetEstado() string {
 }
 
 func (p *Prestamo) Devolver() error {
+	// Evita registrar dos veces la devolución del mismo préstamo.
 	if p.estado == "Devuelto" {
 		return errors.New("el préstamo ya fue devuelto")
 	}
-
+    // Se registra la fecha actual y se actualiza el estado.
 	p.fechaDevolucion = time.Now()
 	p.estado = "Devuelto"
 
